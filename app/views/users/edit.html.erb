@@ -1,0 +1,10 @@
+<%= form_for @user , html: { multipart: true } do |f| %>
+<%= image_tag @user.image.url(:medium) %>
+<%= f.file_field :image %> <br />
+<%= f.label :name%><br /> <%= f.text_field :name %> <br />
+<%= f.label :age %> <br /><%= f.text_field :age %><br />
+
+<%= f.submit 'save '%>
+
+
+<% end %>

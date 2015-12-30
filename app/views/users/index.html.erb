@@ -1,0 +1,15 @@
+<%= form_tag destroy_multiple_users_path , method: :delete do %>
+<% @users.each do |user| %>
+
+<%= check_box_tag "users[]", user.id %><%= image_tag user.image.url(:thumb) %>NAME : <%= link_to  user.name ,user_path(user) %>    AGE :<%= user.age %> <%= link_to 'Edit' , edit_user_path(user) %> | <%= link_to 'delete', user , method: :delete %><br />
+<% end %>
+<h3><%= link_to ' new user database' , new_user_path %></h3>
+<h3><%= link_to ' go back' , complete_users_path %></h3><br />
+<%= submit_tag "Delete selected" %>
+<% end %>
+
+
+
+
+
+
